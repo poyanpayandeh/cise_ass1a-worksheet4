@@ -31,13 +31,14 @@ const Articles: NextPage<ArticlesProps> = ({ articles }) => {
   return (
     <div className="container">
       <h1>Articles Index Page</h1>
-      <p>Page containing a table of articles</p>
+      <p>Page containing a table of articles:</p>
       <SortableTable headers={headers} data={articles} />
     </div>
   );
 };
 
 export const getStaticProps: GetStaticProps<ArticlesProps> = async (_) => {
+  // Map the data to ensure all articles have consistent property names
   const articles = data.articles.map((article) => ({
     id: article.id ?? article._id,
     title: article.title,

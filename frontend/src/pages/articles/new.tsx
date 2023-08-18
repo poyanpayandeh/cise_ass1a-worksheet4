@@ -10,7 +10,7 @@ const NewDiscussion = () => {
   const [summary, setSummary] = useState("");
   const [linkedDiscussion, setLinkedDiscussion] = useState("");
 
-  const submitNewArtcle = async (event: FormEvent<HTMLFormElement>) => {
+  const submitNewArticle = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(
       JSON.stringify({
@@ -47,7 +47,7 @@ const NewDiscussion = () => {
   return (
     <div className="container">
       <h1>New Article</h1>
-      <form className={formStyles.form} onSubmit={submitNewArtcle}>
+      <form className={formStyles.form} onSubmit={submitNewArticle}>
         <label htmlFor="title">Title:</label>
         <input
           className={formStyles.formItem}
@@ -67,6 +67,7 @@ const NewDiscussion = () => {
               <input
                 type="text"
                 name="author"
+                id="author"
                 value={author}
                 onChange={(event) => changeAuthor(index, event.target.value)}
                 className={formStyles.formItem}
@@ -97,9 +98,9 @@ const NewDiscussion = () => {
         <input
           className={formStyles.formItem}
           type="text"
-          value={source}
           name="source"
           id="source"
+          value={source}
           onChange={(event) => {
             setSource(event.target.value);
           }}
@@ -138,6 +139,7 @@ const NewDiscussion = () => {
         <textarea
           className={formStyles.formTextArea}
           name="summary"
+          id="summary"
           value={summary}
           onChange={(event) => setSummary(event.target.value)}
         />
