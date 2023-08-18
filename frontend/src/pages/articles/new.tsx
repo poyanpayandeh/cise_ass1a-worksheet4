@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import formStyles from "../../styles/Form.module.css";
+import formStyles from "../../styles/Form.module.scss";
 
 const NewDiscussion = () => {
   const [title, setTitle] = useState("");
@@ -132,6 +132,14 @@ const NewDiscussion = () => {
           onChange={(event) => {
             setDoi(event.target.value);
           }}
+        />
+
+        <label htmlFor="summary">Summary:</label>
+        <textarea
+          className={formStyles.formTextArea}
+          name="summary"
+          value={summary}
+          onChange={(event) => setSummary(event.target.value)}
         />
 
         <button className={formStyles.formItem} type="submit">
