@@ -1,12 +1,12 @@
 import { useRouter } from "next/router";
-import React, { ReactNode } from "react";
+import React from "react";
 import styles from "./Nav.module.scss";
 
 type Props = {
   route?: string;
   children: React.ReactNode;
   end?: boolean;
-  dropdown: boolean;
+  dropdown?: boolean;
   onClick?: boolean | (() => void);
   style?: React.CSSProperties;
 };
@@ -25,11 +25,13 @@ const NavItem = ({ children, route, end, dropdown, onClick, style }: Props) => {
     <div
       style={style}
       className={`${route || onClick ? styles.clickable : styles.navitem}${
-        end ? ` ${styles.dropdown}` : ""
-      }`}
+        end ? ` ${styles.end}` : ""
+      }${dropdown ? ` ${styles.dropdown}` : ""}`}
       onClick={typeof onClick === "function" ? onClick : navigate}
     >
       {children}
     </div>
   );
 };
+
+export default NavItem;
