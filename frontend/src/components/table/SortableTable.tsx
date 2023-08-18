@@ -4,6 +4,7 @@ interface SortableTableProps {
   headers: { key: string; label: string }[];
   data: any[];
 }
+
 const SortableTable: React.FC<SortableTableProps> = ({ headers, data }) => (
   <table>
     <thead>
@@ -24,4 +25,5 @@ const SortableTable: React.FC<SortableTableProps> = ({ headers, data }) => (
     </tbody>
   </table>
 );
+
 export default SortableTable;

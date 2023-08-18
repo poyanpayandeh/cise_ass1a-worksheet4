@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 
 export default function SubmissionForm() {
   const { register, handleSubmit } = useForm();
-
   const onSubmit = (data: any) => JSON.stringify(data);
 
   return (
@@ -23,9 +22,9 @@ export default function SubmissionForm() {
       </p>
 
       <select {...register("linked_discussion")}>
-        <option value="">Select SE practice</option>
+        <option value="">Select SE practice...</option>
         <option value="TDD">TDD</option>
-        <option value="Mob Pogramming">Mob Programming</option>
+        <option value="Mob Programming">Mob Programmin</option>
       </select>
       <input type="submit" />
     </form>

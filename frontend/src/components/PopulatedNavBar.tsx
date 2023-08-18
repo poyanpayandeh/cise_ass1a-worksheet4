@@ -6,17 +6,17 @@ import NavItem from "./nav/NavItem";
 const PopulatedNavBar = () => {
   return (
     <NavBar>
-      <NavItem>Speed</NavItem>
+      <NavItem>SPEED</NavItem>
       <NavItem route="/" end>
         Home
       </NavItem>
       <NavItem dropdown route="/articles">
         Articles <IoMdArrowDropdown />
+        <NavDropdown>
+          <NavItem route="/articles">View articles</NavItem>
+          <NavItem route="/articles/new">Submit new</NavItem>
+        </NavDropdown>
       </NavItem>
-      <NavDropdown>
-        <NavItem route="/articles">View Articles</NavItem>
-        <NavItem route="/articles/new">Submit New</NavItem>
-      </NavDropdown>
     </NavBar>
   );
 };
